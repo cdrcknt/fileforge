@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FileForge - Advanced File Tools</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <h1>FileForge</h1>
+            <p class="subtitle">Advanced File Tools</p>
+        </header>
+
+        <main>
+            <div class="tools-container">
+                <div class="tool-card" data-tool="converter">
+                    <i class="fas fa-exchange-alt"></i>
+                    <h3>Format Converter</h3>
+                    <p>Convert between various file formats</p>
+                </div>
+                <div class="tool-card" data-tool="compress">
+                    <i class="fas fa-compress-arrows-alt"></i>
+                    <h3>File Compressor</h3>
+                    <p>Reduce file size without quality loss</p>
+                </div>
+                <div class="tool-card" data-tool="merge">
+                    <i class="fas fa-object-group"></i>
+                    <h3>PDF Merger</h3>
+                    <p>Combine multiple PDFs into one</p>
+                </div>
+                <div class="tool-card" data-tool="split">
+                    <i class="fas fa-cut"></i>
+                    <h3>File Splitter</h3>
+                    <p>Split large files into smaller parts</p>
+                </div>
+            </div>
+
+            <div class="workspace hidden">
+                <div class="workspace-header">
+                    <button class="back-btn"><i class="fas fa-arrow-left"></i> Back</button>
+                    <h2 class="tool-title">Tool Name</h2>
+                </div>
+
+                <div class="drop-zone">
+                    <div class="drop-zone-prompt">
+                        <i class="fas fa-cloud-upload-alt"></i>
+                        <p>Drag & Drop files here or click to browse</p>
+                        <input type="file" id="fileInput" multiple class="file-input" />
+                    </div>
+                </div>
+
+                <div class="options-panel hidden">
+                    <div class="format-options hidden">
+                        <label>Convert to:</label>
+                        <select id="formatSelect">
+                            <option value="pdf">PDF</option>
+                            <option value="jpg">JPG</option>
+                            <option value="png">PNG</option>
+                            <option value="txt">TXT</option>
+                        </select>
+                    </div>
+                    <div class="compression-options hidden">
+                        <label>Compression Level:</label>
+                        <input type="range" id="compressionLevel" min="1" max="9" value="6">
+                        <span id="compressionValue">60%</span>
+                    </div>
+                    <button id="processBtn" class="process-btn">Process Files</button>
+                </div>
+
+                <div class="results-panel hidden">
+                    <h3>Processed Files</h3>
+                    <div class="results-list"></div>
+                    <button id="downloadAllBtn" class="download-btn">
+                        <i class="fas fa-download"></i> Download All
+                    </button>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>FileForge - Process files locally in your browser</p>
+        </footer>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+    <script src="js/fileOperations.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
